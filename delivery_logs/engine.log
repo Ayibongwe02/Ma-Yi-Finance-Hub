@@ -1,0 +1,147 @@
+
+===== SCAN 2026-09-18T09:51:16.211748+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  108 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.15407 sl=1.15521 tp=1.15236 → win
+  FIRED  EURUSD=X 1h three_soldiers_crows score=-45.2 SHORT entry=1.14653 sl=1.14847 tp=1.14361 → loss
+  FIRED  EURUSD=X 1h tweezer score=-80.0 SHORT entry=1.14626 sl=1.14825 tp=1.14329 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-64.3 SHORT entry=1.14613 sl=1.14771 tp=1.14376 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14692 sl=1.1477 tp=1.14575 → loss
+  FIRED  EURUSD=X 1h tweezer score=-85.0 SHORT entry=1.14771 sl=1.14877 tp=1.14612 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-58.3 SHORT entry=1.14758 sl=1.14871 tp=1.14587 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14771 sl=1.14871 tp=1.14621 → loss
+  FIRED  EURUSD=X 1h tweezer score=-60.9 SHORT entry=1.14929 sl=1.15068 tp=1.14722 → pending
+  FIRED  EURUSD=X 1h shooting_star score=-68.7 SHORT entry=1.1489 sl=1.15027 tp=1.14684 → pending
+  FIRED  EURUSD=X 1h tweezer score=43.3 LONG entry=1.14824 sl=1.14762 tp=1.14917 → win
+  FIRED  EURUSD=X 1h tweezer score=-86.2 SHORT entry=1.14797 sl=1.14872 tp=1.14686 → loss
+  FIRED  EURUSD=X 1h doji score=40.9 LONG entry=1.14811 sl=1.14763 tp=1.14882 → win
+  FIRED  EURUSD=X 1h tweezer score=48.4 LONG entry=1.14837 sl=1.14763 tp=1.14947 → win
+  FIRED  EURUSD=X 1h tweezer score=-64.7 SHORT entry=1.14811 sl=1.14856 tp=1.14742 → loss
+  FIRED  EURUSD=X 1h tweezer score=45.9 LONG entry=1.14916 sl=1.14778 tp=1.15123 → loss
+  FIRED  EURUSD=X 1h tweezer score=-64.4 SHORT entry=1.14903 sl=1.15014 tp=1.14736 → pending
+  FIRED  EURUSD=X 1h marubozu score=-75.5 SHORT entry=1.14824 sl=1.14855 tp=1.14776 → loss
+  FIRED  EURUSD=X 1h tweezer score=59.5 LONG entry=1.14863 sl=1.14779 tp=1.1499 → loss
+  FIRED  EURUSD=X 1h tweezer score=-69.6 SHORT entry=1.14863 sl=1.14962 tp=1.14715 → pending
+  FIRED  EURUSD=X 1h shooting_star score=-80.2 SHORT entry=1.14863 sl=1.14962 tp=1.14715 → pending
+[alert:console] Telegram credentials not set — message follows:
+📡 *Market signal*
+*Sell opportunity* on *EUR/USD* (1h chart)
+
+*Why:* A sell setup from an engulfing pattern (this candle swallowed the previous one), in line with the longer-term direction, near a recent support/resistance area.
+*Confidence:* Strong (engine score 100/100)
+
+*Suggested plan*
+• Enter near `1.14758`
+• Max-loss point (stop): `1.14857` (~9.9 pips away)
+• Target: `1.14609` (~14.9 pips, about 1.5× the risk)
+
+_About $100 at a 1% account risk on a $10,000 account (stop is ~9.9 pips away). At 1000 units the same stop is roughly $1 of price risk._
+
+Bar time: `2026-09-18T11:00:00+01:00`
+_This is not financial advice. Past patterns do not guarantee future results._
+----------------------------------------
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14758 sl=1.14857 tp=1.14609 → pending
+  Done. 22 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  108 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.34564 sl=1.34695 tp=1.34369 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.34503 sl=1.34644 tp=1.34291 → win
+  FIRED  GBPUSD=X 1h tweezer score=-96.3 SHORT entry=1.34457 sl=1.34617 tp=1.34219 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33804 sl=1.34034 tp=1.33459 → loss
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33727 sl=1.33966 tp=1.33369 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-84.4 SHORT entry=1.33713 sl=1.3389 tp=1.33448 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-56.4 SHORT entry=1.33892 sl=1.34034 tp=1.33679 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-54.4 SHORT entry=1.33942 sl=1.34029 tp=1.33812 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-40.2 SHORT entry=1.33742 sl=1.33889 tp=1.3352 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-92.9 SHORT entry=1.33458 sl=1.33712 tp=1.33077 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-79.3 SHORT entry=1.33584 sl=1.33891 tp=1.33125 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33563 sl=1.33646 tp=1.33438 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33597 sl=1.33641 tp=1.33531 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33726 sl=1.33498 tp=1.34067 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-67.0 SHORT entry=1.33697 sl=1.33822 tp=1.33509 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-72.1 SHORT entry=1.33677 sl=1.33767 tp=1.33542 → win
+  Done. 16 signals fired (threshold=40.0).
+
+Summary: 38 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 38, "pairs_attempted": ["EURUSD=X", "GBPUSD=X"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-18T10:51:43.707818+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-18T11:52:10.933854+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-18T12:25:58.666334+00:00 mode=replay pair=ALL tf=1h reason=manual =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-18T12:52:42.097144+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-18T13:00:42.560712+00:00 mode=replay pair=ALL tf=1h reason=manual =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====

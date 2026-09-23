@@ -1,0 +1,32 @@
+**/node_modules
+**/.venv
+**/venv
+**/__pycache__
+**/*.pyc
+**/.git
+**/.env
+**/.env.*
+!**/.env.example
+**/.vite
+**/.tanstack
+**/coverage
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+**/.DS_Store
+**/*.md.bak
+*.zip
+ma-yi-*.zip
+.idea
+.vscode
+
+# Large / generated data volume-mounted at runtime by backend/docker-compose.yml
+# — keep it out of the image so a changed report/log doesn't bust the layer cache.
+backend/backtest/reports/*
+backend/delivery/logs/*
+backend/execution/logs/*
+backend/data/store/*
+backtest_reports/*
+delivery_logs/*
+execution_logs/*
+data_store/*

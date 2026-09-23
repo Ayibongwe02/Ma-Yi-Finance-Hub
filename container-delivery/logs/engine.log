@@ -1,0 +1,1364 @@
+
+===== SCAN 2026-09-21T11:18:29.235191+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for ^STOXX50E — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "^STOXX50E", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-21T11:20:28.346127+00:00 mode=replay pair=ALL tf=1h reason=manual =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  107 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14771 sl=1.14871 tp=1.14621 → loss
+  FIRED  EURUSD=X 1h tweezer score=-60.9 SHORT entry=1.14929 sl=1.15068 tp=1.14722 → win
+  FIRED  EURUSD=X 1h shooting_star score=-68.7 SHORT entry=1.1489 sl=1.15027 tp=1.14684 → win
+  FIRED  EURUSD=X 1h tweezer score=43.3 LONG entry=1.14824 sl=1.14762 tp=1.14917 → win
+  FIRED  EURUSD=X 1h tweezer score=-86.2 SHORT entry=1.14797 sl=1.14872 tp=1.14686 → loss
+  FIRED  EURUSD=X 1h doji score=40.9 LONG entry=1.14811 sl=1.14763 tp=1.14882 → win
+  FIRED  EURUSD=X 1h tweezer score=48.4 LONG entry=1.14837 sl=1.14763 tp=1.14947 → win
+  FIRED  EURUSD=X 1h tweezer score=-64.7 SHORT entry=1.14811 sl=1.14856 tp=1.14742 → loss
+  FIRED  EURUSD=X 1h tweezer score=45.9 LONG entry=1.14916 sl=1.14778 tp=1.15123 → loss
+  FIRED  EURUSD=X 1h tweezer score=-64.4 SHORT entry=1.14903 sl=1.15014 tp=1.14736 → win
+  FIRED  EURUSD=X 1h marubozu score=-75.5 SHORT entry=1.14824 sl=1.14855 tp=1.14776 → loss
+  FIRED  EURUSD=X 1h tweezer score=59.5 LONG entry=1.14863 sl=1.14779 tp=1.1499 → loss
+  FIRED  EURUSD=X 1h tweezer score=-69.6 SHORT entry=1.14863 sl=1.14962 tp=1.14715 → win
+  FIRED  EURUSD=X 1h shooting_star score=-80.2 SHORT entry=1.14863 sl=1.14949 tp=1.14735 → win
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14758 sl=1.14857 tp=1.14609 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → pending
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → pending
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → pending
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → pending
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → pending
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → pending
+[alert:console] Telegram credentials not set — message follows:
+📡 *Market signal*
+*Sell opportunity* on *EUR/USD* (1h chart)
+
+*Why:* A sell setup from a shooting-star candle (sellers pushed back after a rise), in line with the longer-term direction, near a recent support/resistance area.
+*Confidence:* Strong (engine score 98/100)
+
+*Suggested plan*
+• Enter near `1.14837`
+• Max-loss point (stop): `1.14895` (~5.8 pips away)
+• Target: `1.14750` (~8.7 pips, about 1.5× the risk)
+
+_About $100 at a 1% account risk on a $10,000 account (stop is ~5.8 pips away). At 1000 units the same stop is roughly $1 of price risk._
+
+Bar time: `2026-09-21T11:00:00+01:00`
+_This is not financial advice. Past patterns do not guarantee future results._
+----------------------------------------
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → pending
+  Done. 23 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  107 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-40.2 SHORT entry=1.33742 sl=1.33889 tp=1.3352 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-92.9 SHORT entry=1.33458 sl=1.33712 tp=1.33077 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-79.3 SHORT entry=1.33584 sl=1.33891 tp=1.33125 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33563 sl=1.33646 tp=1.33438 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33597 sl=1.33641 tp=1.33531 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33726 sl=1.33498 tp=1.34067 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-67.0 SHORT entry=1.33697 sl=1.33822 tp=1.33509 → win
+  FIRED  GBPUSD=X 1h tweezer score=-72.1 SHORT entry=1.33677 sl=1.33767 tp=1.33542 → win
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → pending
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → pending
+[alert:console] Telegram credentials not set — message follows:
+📡 *Market signal*
+*Sell opportunity* on *GBP/USD* (1h chart)
+
+*Why:* A sell setup from a star pattern (pause candle between two stronger moves), in line with the longer-term direction, near a recent support/resistance area.
+*Confidence:* Strong (engine score 100/100)
+
+*Suggested plan*
+• Enter near `1.33806`
+• Max-loss point (stop): `1.33900` (~9.4 pips away)
+• Target: `1.33665` (~14.1 pips, about 1.5× the risk)
+
+_About $100 at a 1% account risk on a $10,000 account (stop is ~9.4 pips away). At 1000 units the same stop is roughly $1 of price risk._
+
+Bar time: `2026-09-21T11:00:00+01:00`
+_This is not financial advice. Past patterns do not guarantee future results._
+----------------------------------------
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → pending
+  Done. 18 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  40 candles loaded. Running engine...
+[^STOXX50E 1h] only 40 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 41 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 41, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-21T12:20:06.013977+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] EURUSD=X @ 1h still rate limited after retries — using cached data (60m old) instead of failing this cycle.
+  107 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14771 sl=1.14871 tp=1.14621 → loss
+  FIRED  EURUSD=X 1h tweezer score=-60.9 SHORT entry=1.14929 sl=1.15068 tp=1.14722 → win
+  FIRED  EURUSD=X 1h shooting_star score=-68.7 SHORT entry=1.1489 sl=1.15027 tp=1.14684 → win
+  FIRED  EURUSD=X 1h tweezer score=43.3 LONG entry=1.14824 sl=1.14762 tp=1.14917 → win
+  FIRED  EURUSD=X 1h tweezer score=-86.2 SHORT entry=1.14797 sl=1.14872 tp=1.14686 → loss
+  FIRED  EURUSD=X 1h doji score=40.9 LONG entry=1.14811 sl=1.14763 tp=1.14882 → win
+  FIRED  EURUSD=X 1h tweezer score=48.4 LONG entry=1.14837 sl=1.14763 tp=1.14947 → win
+  FIRED  EURUSD=X 1h tweezer score=-64.7 SHORT entry=1.14811 sl=1.14856 tp=1.14742 → loss
+  FIRED  EURUSD=X 1h tweezer score=45.9 LONG entry=1.14916 sl=1.14778 tp=1.15123 → loss
+  FIRED  EURUSD=X 1h tweezer score=-64.4 SHORT entry=1.14903 sl=1.15014 tp=1.14736 → win
+  FIRED  EURUSD=X 1h marubozu score=-75.5 SHORT entry=1.14824 sl=1.14855 tp=1.14776 → loss
+  FIRED  EURUSD=X 1h tweezer score=59.5 LONG entry=1.14863 sl=1.14779 tp=1.1499 → loss
+  FIRED  EURUSD=X 1h tweezer score=-69.6 SHORT entry=1.14863 sl=1.14962 tp=1.14715 → win
+  FIRED  EURUSD=X 1h shooting_star score=-80.2 SHORT entry=1.14863 sl=1.14949 tp=1.14735 → win
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14758 sl=1.14857 tp=1.14609 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → pending
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → pending
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → pending
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → pending
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → pending
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → pending
+  [dedup] EURUSD=X 1h bar 2026-09-21T11:00:00+01:00 already alerted — skipping resend
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → pending
+  Done. 23 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] GBPUSD=X @ 1h still rate limited after retries — using cached data (60m old) instead of failing this cycle.
+  107 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-40.2 SHORT entry=1.33742 sl=1.33889 tp=1.3352 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-92.9 SHORT entry=1.33458 sl=1.33712 tp=1.33077 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-79.3 SHORT entry=1.33584 sl=1.33891 tp=1.33125 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33563 sl=1.33646 tp=1.33438 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33597 sl=1.33641 tp=1.33531 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33726 sl=1.33498 tp=1.34067 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-67.0 SHORT entry=1.33697 sl=1.33822 tp=1.33509 → win
+  FIRED  GBPUSD=X 1h tweezer score=-72.1 SHORT entry=1.33677 sl=1.33767 tp=1.33542 → win
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → pending
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → pending
+  [dedup] GBPUSD=X 1h bar 2026-09-21T11:00:00+01:00 already alerted — skipping resend
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → pending
+  Done. 18 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] ^STOXX50E @ 1h still rate limited after retries — using cached data (60m old) instead of failing this cycle.
+  40 candles loaded. Running engine...
+[^STOXX50E 1h] only 40 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 41 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 41, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-21T13:21:59.871240+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] EURUSD=X @ 1h still rate limited after retries — using cached data (122m old) instead of failing this cycle.
+  107 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14771 sl=1.14871 tp=1.14621 → loss
+  FIRED  EURUSD=X 1h tweezer score=-60.9 SHORT entry=1.14929 sl=1.15068 tp=1.14722 → win
+  FIRED  EURUSD=X 1h shooting_star score=-68.7 SHORT entry=1.1489 sl=1.15027 tp=1.14684 → win
+  FIRED  EURUSD=X 1h tweezer score=43.3 LONG entry=1.14824 sl=1.14762 tp=1.14917 → win
+  FIRED  EURUSD=X 1h tweezer score=-86.2 SHORT entry=1.14797 sl=1.14872 tp=1.14686 → loss
+  FIRED  EURUSD=X 1h doji score=40.9 LONG entry=1.14811 sl=1.14763 tp=1.14882 → win
+  FIRED  EURUSD=X 1h tweezer score=48.4 LONG entry=1.14837 sl=1.14763 tp=1.14947 → win
+  FIRED  EURUSD=X 1h tweezer score=-64.7 SHORT entry=1.14811 sl=1.14856 tp=1.14742 → loss
+  FIRED  EURUSD=X 1h tweezer score=45.9 LONG entry=1.14916 sl=1.14778 tp=1.15123 → loss
+  FIRED  EURUSD=X 1h tweezer score=-64.4 SHORT entry=1.14903 sl=1.15014 tp=1.14736 → win
+  FIRED  EURUSD=X 1h marubozu score=-75.5 SHORT entry=1.14824 sl=1.14855 tp=1.14776 → loss
+  FIRED  EURUSD=X 1h tweezer score=59.5 LONG entry=1.14863 sl=1.14779 tp=1.1499 → loss
+  FIRED  EURUSD=X 1h tweezer score=-69.6 SHORT entry=1.14863 sl=1.14962 tp=1.14715 → win
+  FIRED  EURUSD=X 1h shooting_star score=-80.2 SHORT entry=1.14863 sl=1.14949 tp=1.14735 → win
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14758 sl=1.14857 tp=1.14609 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → pending
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → pending
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → pending
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → pending
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → pending
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → pending
+  [dedup] EURUSD=X 1h bar 2026-09-21T11:00:00+01:00 already alerted — skipping resend
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → pending
+  Done. 23 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] GBPUSD=X @ 1h still rate limited after retries — using cached data (122m old) instead of failing this cycle.
+  107 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-40.2 SHORT entry=1.33742 sl=1.33889 tp=1.3352 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-92.9 SHORT entry=1.33458 sl=1.33712 tp=1.33077 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-79.3 SHORT entry=1.33584 sl=1.33891 tp=1.33125 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33563 sl=1.33646 tp=1.33438 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33597 sl=1.33641 tp=1.33531 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33726 sl=1.33498 tp=1.34067 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-67.0 SHORT entry=1.33697 sl=1.33822 tp=1.33509 → win
+  FIRED  GBPUSD=X 1h tweezer score=-72.1 SHORT entry=1.33677 sl=1.33767 tp=1.33542 → win
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → pending
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → pending
+  [dedup] GBPUSD=X 1h bar 2026-09-21T11:00:00+01:00 already alerted — skipping resend
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → pending
+  Done. 18 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] ^STOXX50E @ 1h still rate limited after retries — using cached data (122m old) instead of failing this cycle.
+  40 candles loaded. Running engine...
+[^STOXX50E 1h] only 40 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 41 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 41, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-21T14:23:47.032376+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  110 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14771 sl=1.14871 tp=1.14621 → loss
+  FIRED  EURUSD=X 1h tweezer score=-60.9 SHORT entry=1.14929 sl=1.15068 tp=1.14722 → win
+  FIRED  EURUSD=X 1h shooting_star score=-68.7 SHORT entry=1.1489 sl=1.15027 tp=1.14684 → win
+  FIRED  EURUSD=X 1h tweezer score=43.3 LONG entry=1.14824 sl=1.14762 tp=1.14917 → win
+  FIRED  EURUSD=X 1h tweezer score=-86.2 SHORT entry=1.14797 sl=1.14872 tp=1.14686 → loss
+  FIRED  EURUSD=X 1h doji score=40.9 LONG entry=1.14811 sl=1.14763 tp=1.14882 → win
+  FIRED  EURUSD=X 1h tweezer score=48.4 LONG entry=1.14837 sl=1.14763 tp=1.14947 → win
+  FIRED  EURUSD=X 1h tweezer score=-64.7 SHORT entry=1.14811 sl=1.14856 tp=1.14742 → loss
+  FIRED  EURUSD=X 1h tweezer score=45.9 LONG entry=1.14916 sl=1.14778 tp=1.15123 → loss
+  FIRED  EURUSD=X 1h tweezer score=-64.4 SHORT entry=1.14903 sl=1.15014 tp=1.14736 → win
+  FIRED  EURUSD=X 1h marubozu score=-75.5 SHORT entry=1.14824 sl=1.14855 tp=1.14776 → loss
+  FIRED  EURUSD=X 1h tweezer score=59.5 LONG entry=1.14863 sl=1.14779 tp=1.1499 → loss
+  FIRED  EURUSD=X 1h tweezer score=-69.6 SHORT entry=1.14863 sl=1.14962 tp=1.14715 → win
+  FIRED  EURUSD=X 1h shooting_star score=-80.2 SHORT entry=1.14863 sl=1.14949 tp=1.14735 → win
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14758 sl=1.14857 tp=1.14609 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → pending
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → loss
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → loss
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → win
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → win
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → loss
+  FIRED  EURUSD=X 1h tweezer score=-76.5 SHORT entry=1.1489 sl=1.14936 tp=1.1482 → win
+[alert:console] Telegram credentials not set — message follows:
+📡 *Market signal*
+*Sell opportunity* on *EUR/USD* (1h chart)
+
+*Why:* A sell setup from a full-bodied candle (strong one-sided move), in line with the longer-term direction, near a recent support/resistance area.
+*Confidence:* Strong (engine score 100/100)
+
+*Suggested plan*
+• Enter near `1.14758`
+• Max-loss point (stop): `1.14897` (~13.9 pips away)
+• Target: `1.14549` (~20.9 pips, about 1.5× the risk)
+
+_About $100 at a 1% account risk on a $10,000 account (stop is ~13.9 pips away). At 1000 units the same stop is roughly $1 of price risk._
+
+Bar time: `2026-09-21T14:00:00+01:00`
+_This is not financial advice. Past patterns do not guarantee future results._
+----------------------------------------
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14758 sl=1.14897 tp=1.14549 → pending
+  Done. 25 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  110 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-40.2 SHORT entry=1.33742 sl=1.33889 tp=1.3352 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-92.9 SHORT entry=1.33458 sl=1.33712 tp=1.33077 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-79.3 SHORT entry=1.33584 sl=1.33891 tp=1.33125 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33563 sl=1.33646 tp=1.33438 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33597 sl=1.33641 tp=1.33531 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33726 sl=1.33498 tp=1.34067 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-67.0 SHORT entry=1.33697 sl=1.33822 tp=1.33509 → win
+  FIRED  GBPUSD=X 1h tweezer score=-72.1 SHORT entry=1.33677 sl=1.33767 tp=1.33542 → win
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → loss
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33917 sl=1.33993 tp=1.33803 → pending
+[alert:console] Telegram credentials not set — message follows:
+📡 *Market signal*
+*Sell opportunity* on *GBP/USD* (1h chart)
+
+*Why:* A sell setup from a star pattern (pause candle between two stronger moves), in line with the longer-term direction, near a recent support/resistance area.
+*Confidence:* Strong (engine score 72/100)
+
+*Suggested plan*
+• Enter near `1.33808`
+• Max-loss point (stop): `1.33994` (~18.6 pips away)
+• Target: `1.33529` (~27.9 pips, about 1.5× the risk)
+
+_About $100 at a 1% account risk on a $10,000 account (stop is ~18.6 pips away). At 1000 units the same stop is roughly $2 of price risk._
+
+Bar time: `2026-09-21T14:00:00+01:00`
+_This is not financial advice. Past patterns do not guarantee future results._
+----------------------------------------
+  FIRED  GBPUSD=X 1h star score=-71.8 SHORT entry=1.33808 sl=1.33994 tp=1.33529 → pending
+  Done. 20 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  43 candles loaded. Running engine...
+[^STOXX50E 1h] only 43 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 45 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 45, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-21T15:24:52.217898+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] EURUSD=X @ 1h still rate limited after retries — using cached data (61m old) instead of failing this cycle.
+  110 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14771 sl=1.14871 tp=1.14621 → loss
+  FIRED  EURUSD=X 1h tweezer score=-60.9 SHORT entry=1.14929 sl=1.15068 tp=1.14722 → win
+  FIRED  EURUSD=X 1h shooting_star score=-68.7 SHORT entry=1.1489 sl=1.15027 tp=1.14684 → win
+  FIRED  EURUSD=X 1h tweezer score=43.3 LONG entry=1.14824 sl=1.14762 tp=1.14917 → win
+  FIRED  EURUSD=X 1h tweezer score=-86.2 SHORT entry=1.14797 sl=1.14872 tp=1.14686 → loss
+  FIRED  EURUSD=X 1h doji score=40.9 LONG entry=1.14811 sl=1.14763 tp=1.14882 → win
+  FIRED  EURUSD=X 1h tweezer score=48.4 LONG entry=1.14837 sl=1.14763 tp=1.14947 → win
+  FIRED  EURUSD=X 1h tweezer score=-64.7 SHORT entry=1.14811 sl=1.14856 tp=1.14742 → loss
+  FIRED  EURUSD=X 1h tweezer score=45.9 LONG entry=1.14916 sl=1.14778 tp=1.15123 → loss
+  FIRED  EURUSD=X 1h tweezer score=-64.4 SHORT entry=1.14903 sl=1.15014 tp=1.14736 → win
+  FIRED  EURUSD=X 1h marubozu score=-75.5 SHORT entry=1.14824 sl=1.14855 tp=1.14776 → loss
+  FIRED  EURUSD=X 1h tweezer score=59.5 LONG entry=1.14863 sl=1.14779 tp=1.1499 → loss
+  FIRED  EURUSD=X 1h tweezer score=-69.6 SHORT entry=1.14863 sl=1.14962 tp=1.14715 → win
+  FIRED  EURUSD=X 1h shooting_star score=-80.2 SHORT entry=1.14863 sl=1.14949 tp=1.14735 → win
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14758 sl=1.14857 tp=1.14609 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → pending
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → loss
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → loss
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → win
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → win
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → loss
+  FIRED  EURUSD=X 1h tweezer score=-76.5 SHORT entry=1.1489 sl=1.14936 tp=1.1482 → win
+  [dedup] EURUSD=X 1h bar 2026-09-21T14:00:00+01:00 already alerted — skipping resend
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14758 sl=1.14897 tp=1.14549 → pending
+  Done. 25 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] GBPUSD=X @ 1h still rate limited after retries — using cached data (62m old) instead of failing this cycle.
+  110 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-40.2 SHORT entry=1.33742 sl=1.33889 tp=1.3352 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-92.9 SHORT entry=1.33458 sl=1.33712 tp=1.33077 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-79.3 SHORT entry=1.33584 sl=1.33891 tp=1.33125 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33563 sl=1.33646 tp=1.33438 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33597 sl=1.33641 tp=1.33531 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33726 sl=1.33498 tp=1.34067 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-67.0 SHORT entry=1.33697 sl=1.33822 tp=1.33509 → win
+  FIRED  GBPUSD=X 1h tweezer score=-72.1 SHORT entry=1.33677 sl=1.33767 tp=1.33542 → win
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → loss
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33917 sl=1.33993 tp=1.33803 → pending
+  [dedup] GBPUSD=X 1h bar 2026-09-21T14:00:00+01:00 already alerted — skipping resend
+  FIRED  GBPUSD=X 1h star score=-71.8 SHORT entry=1.33808 sl=1.33994 tp=1.33529 → pending
+  Done. 20 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] ^STOXX50E @ 1h still rate limited after retries — using cached data (62m old) instead of failing this cycle.
+  43 candles loaded. Running engine...
+[^STOXX50E 1h] only 43 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 45 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 45, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-21T16:26:43.342382+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] EURUSD=X @ 1h still rate limited after retries — using cached data (123m old) instead of failing this cycle.
+  110 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14771 sl=1.14871 tp=1.14621 → loss
+  FIRED  EURUSD=X 1h tweezer score=-60.9 SHORT entry=1.14929 sl=1.15068 tp=1.14722 → win
+  FIRED  EURUSD=X 1h shooting_star score=-68.7 SHORT entry=1.1489 sl=1.15027 tp=1.14684 → win
+  FIRED  EURUSD=X 1h tweezer score=43.3 LONG entry=1.14824 sl=1.14762 tp=1.14917 → win
+  FIRED  EURUSD=X 1h tweezer score=-86.2 SHORT entry=1.14797 sl=1.14872 tp=1.14686 → loss
+  FIRED  EURUSD=X 1h doji score=40.9 LONG entry=1.14811 sl=1.14763 tp=1.14882 → win
+  FIRED  EURUSD=X 1h tweezer score=48.4 LONG entry=1.14837 sl=1.14763 tp=1.14947 → win
+  FIRED  EURUSD=X 1h tweezer score=-64.7 SHORT entry=1.14811 sl=1.14856 tp=1.14742 → loss
+  FIRED  EURUSD=X 1h tweezer score=45.9 LONG entry=1.14916 sl=1.14778 tp=1.15123 → loss
+  FIRED  EURUSD=X 1h tweezer score=-64.4 SHORT entry=1.14903 sl=1.15014 tp=1.14736 → win
+  FIRED  EURUSD=X 1h marubozu score=-75.5 SHORT entry=1.14824 sl=1.14855 tp=1.14776 → loss
+  FIRED  EURUSD=X 1h tweezer score=59.5 LONG entry=1.14863 sl=1.14779 tp=1.1499 → loss
+  FIRED  EURUSD=X 1h tweezer score=-69.6 SHORT entry=1.14863 sl=1.14962 tp=1.14715 → win
+  FIRED  EURUSD=X 1h shooting_star score=-80.2 SHORT entry=1.14863 sl=1.14949 tp=1.14735 → win
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14758 sl=1.14857 tp=1.14609 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → pending
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → loss
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → loss
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → win
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → win
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → loss
+  FIRED  EURUSD=X 1h tweezer score=-76.5 SHORT entry=1.1489 sl=1.14936 tp=1.1482 → win
+  [dedup] EURUSD=X 1h bar 2026-09-21T14:00:00+01:00 already alerted — skipping resend
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14758 sl=1.14897 tp=1.14549 → pending
+  Done. 25 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] GBPUSD=X @ 1h still rate limited after retries — using cached data (123m old) instead of failing this cycle.
+  110 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-40.2 SHORT entry=1.33742 sl=1.33889 tp=1.3352 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-92.9 SHORT entry=1.33458 sl=1.33712 tp=1.33077 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-79.3 SHORT entry=1.33584 sl=1.33891 tp=1.33125 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33563 sl=1.33646 tp=1.33438 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33597 sl=1.33641 tp=1.33531 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33726 sl=1.33498 tp=1.34067 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-67.0 SHORT entry=1.33697 sl=1.33822 tp=1.33509 → win
+  FIRED  GBPUSD=X 1h tweezer score=-72.1 SHORT entry=1.33677 sl=1.33767 tp=1.33542 → win
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → loss
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33917 sl=1.33993 tp=1.33803 → pending
+  [dedup] GBPUSD=X 1h bar 2026-09-21T14:00:00+01:00 already alerted — skipping resend
+  FIRED  GBPUSD=X 1h star score=-71.8 SHORT entry=1.33808 sl=1.33994 tp=1.33529 → pending
+  Done. 20 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] ^STOXX50E @ 1h still rate limited after retries — using cached data (124m old) instead of failing this cycle.
+  43 candles loaded. Running engine...
+[^STOXX50E 1h] only 43 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 45 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 45, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-21T17:13:30.964478+00:00 mode=replay pair=ALL tf=1h reason=manual =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] EURUSD=X @ 1h still rate limited after retries — using cached data (170m old) instead of failing this cycle.
+  110 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14771 sl=1.14871 tp=1.14621 → loss
+  FIRED  EURUSD=X 1h tweezer score=-60.9 SHORT entry=1.14929 sl=1.15068 tp=1.14722 → win
+  FIRED  EURUSD=X 1h shooting_star score=-68.7 SHORT entry=1.1489 sl=1.15027 tp=1.14684 → win
+  FIRED  EURUSD=X 1h tweezer score=43.3 LONG entry=1.14824 sl=1.14762 tp=1.14917 → win
+  FIRED  EURUSD=X 1h tweezer score=-86.2 SHORT entry=1.14797 sl=1.14872 tp=1.14686 → loss
+  FIRED  EURUSD=X 1h doji score=40.9 LONG entry=1.14811 sl=1.14763 tp=1.14882 → win
+  FIRED  EURUSD=X 1h tweezer score=48.4 LONG entry=1.14837 sl=1.14763 tp=1.14947 → win
+  FIRED  EURUSD=X 1h tweezer score=-64.7 SHORT entry=1.14811 sl=1.14856 tp=1.14742 → loss
+  FIRED  EURUSD=X 1h tweezer score=45.9 LONG entry=1.14916 sl=1.14778 tp=1.15123 → loss
+  FIRED  EURUSD=X 1h tweezer score=-64.4 SHORT entry=1.14903 sl=1.15014 tp=1.14736 → win
+  FIRED  EURUSD=X 1h marubozu score=-75.5 SHORT entry=1.14824 sl=1.14855 tp=1.14776 → loss
+  FIRED  EURUSD=X 1h tweezer score=59.5 LONG entry=1.14863 sl=1.14779 tp=1.1499 → loss
+  FIRED  EURUSD=X 1h tweezer score=-69.6 SHORT entry=1.14863 sl=1.14962 tp=1.14715 → win
+  FIRED  EURUSD=X 1h shooting_star score=-80.2 SHORT entry=1.14863 sl=1.14949 tp=1.14735 → win
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14758 sl=1.14857 tp=1.14609 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → pending
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → loss
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → loss
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → win
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → win
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → loss
+  FIRED  EURUSD=X 1h tweezer score=-76.5 SHORT entry=1.1489 sl=1.14936 tp=1.1482 → win
+  [dedup] EURUSD=X 1h bar 2026-09-21T14:00:00+01:00 already alerted — skipping resend
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14758 sl=1.14897 tp=1.14549 → pending
+  Done. 25 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] GBPUSD=X @ 1h still rate limited after retries — using cached data (170m old) instead of failing this cycle.
+  110 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-40.2 SHORT entry=1.33742 sl=1.33889 tp=1.3352 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-92.9 SHORT entry=1.33458 sl=1.33712 tp=1.33077 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-79.3 SHORT entry=1.33584 sl=1.33891 tp=1.33125 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33563 sl=1.33646 tp=1.33438 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33597 sl=1.33641 tp=1.33531 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33726 sl=1.33498 tp=1.34067 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-67.0 SHORT entry=1.33697 sl=1.33822 tp=1.33509 → win
+  FIRED  GBPUSD=X 1h tweezer score=-72.1 SHORT entry=1.33677 sl=1.33767 tp=1.33542 → win
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → loss
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33917 sl=1.33993 tp=1.33803 → pending
+  [dedup] GBPUSD=X 1h bar 2026-09-21T14:00:00+01:00 already alerted — skipping resend
+  FIRED  GBPUSD=X 1h star score=-71.8 SHORT entry=1.33808 sl=1.33994 tp=1.33529 → pending
+  Done. 20 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] ^STOXX50E @ 1h still rate limited after retries — using cached data (170m old) instead of failing this cycle.
+  43 candles loaded. Running engine...
+[^STOXX50E 1h] only 43 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 45 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 45, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-21T17:28:56.641414+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  113 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14771 sl=1.14871 tp=1.14621 → loss
+  FIRED  EURUSD=X 1h tweezer score=-60.9 SHORT entry=1.14929 sl=1.15068 tp=1.14722 → win
+  FIRED  EURUSD=X 1h shooting_star score=-68.7 SHORT entry=1.1489 sl=1.15027 tp=1.14684 → win
+  FIRED  EURUSD=X 1h tweezer score=43.3 LONG entry=1.14824 sl=1.14762 tp=1.14917 → win
+  FIRED  EURUSD=X 1h tweezer score=-86.2 SHORT entry=1.14797 sl=1.14872 tp=1.14686 → loss
+  FIRED  EURUSD=X 1h doji score=40.9 LONG entry=1.14811 sl=1.14763 tp=1.14882 → win
+  FIRED  EURUSD=X 1h tweezer score=48.4 LONG entry=1.14837 sl=1.14763 tp=1.14947 → win
+  FIRED  EURUSD=X 1h tweezer score=-64.7 SHORT entry=1.14811 sl=1.14856 tp=1.14742 → loss
+  FIRED  EURUSD=X 1h tweezer score=45.9 LONG entry=1.14916 sl=1.14778 tp=1.15123 → loss
+  FIRED  EURUSD=X 1h tweezer score=-64.4 SHORT entry=1.14903 sl=1.15014 tp=1.14736 → win
+  FIRED  EURUSD=X 1h marubozu score=-75.5 SHORT entry=1.14824 sl=1.14855 tp=1.14776 → loss
+  FIRED  EURUSD=X 1h tweezer score=59.5 LONG entry=1.14863 sl=1.14779 tp=1.1499 → loss
+  FIRED  EURUSD=X 1h tweezer score=-69.6 SHORT entry=1.14863 sl=1.14962 tp=1.14715 → win
+  FIRED  EURUSD=X 1h shooting_star score=-80.2 SHORT entry=1.14863 sl=1.14949 tp=1.14735 → win
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14758 sl=1.14857 tp=1.14609 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → pending
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → loss
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → loss
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → win
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → win
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → loss
+  FIRED  EURUSD=X 1h tweezer score=-76.5 SHORT entry=1.1489 sl=1.14936 tp=1.1482 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14758 sl=1.14897 tp=1.14549 → pending
+  FIRED  EURUSD=X 1h doji score=63.9 LONG entry=1.14758 sl=1.14649 tp=1.14921 → pending
+  FIRED  EURUSD=X 1h marubozu score=-89.9 SHORT entry=1.14705 sl=1.14814 tp=1.14542 → pending
+[alert:console] Telegram credentials not set — message follows:
+📡 *Market signal*
+*Sell opportunity* on *EUR/USD* (1h chart)
+
+*Why:* A sell setup from a shooting-star candle (sellers pushed back after a rise), in line with the longer-term direction, near a recent support/resistance area.
+*Confidence:* Moderate (engine score 59/100)
+
+*Suggested plan*
+• Enter near `1.14718`
+• Max-loss point (stop): `1.14897` (~17.9 pips away)
+• Target: `1.14451` (~26.7 pips, about 1.5× the risk)
+
+_About $100 at a 1% account risk on a $10,000 account (stop is ~17.9 pips away). At 1000 units the same stop is roughly $2 of price risk._
+
+Bar time: `2026-09-21T17:00:00+01:00`
+_This is not financial advice. Past patterns do not guarantee future results._
+----------------------------------------
+  FIRED  EURUSD=X 1h shooting_star score=-59.2 SHORT entry=1.14718 sl=1.14897 tp=1.14451 → pending
+  Done. 28 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  113 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-40.2 SHORT entry=1.33742 sl=1.33889 tp=1.3352 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-92.9 SHORT entry=1.33458 sl=1.33712 tp=1.33077 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-79.3 SHORT entry=1.33584 sl=1.33891 tp=1.33125 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33563 sl=1.33646 tp=1.33438 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33597 sl=1.33641 tp=1.33531 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33726 sl=1.33498 tp=1.34067 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-67.0 SHORT entry=1.33697 sl=1.33822 tp=1.33509 → win
+  FIRED  GBPUSD=X 1h tweezer score=-72.1 SHORT entry=1.33677 sl=1.33767 tp=1.33542 → win
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → pending
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → loss
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33917 sl=1.33993 tp=1.33803 → win
+  FIRED  GBPUSD=X 1h star score=-71.8 SHORT entry=1.33808 sl=1.33994 tp=1.33529 → pending
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.3374 sl=1.33874 tp=1.33539 → pending
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.33699 sl=1.33836 tp=1.33494 → pending
+  Done. 22 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  45 candles loaded. Running engine...
+[^STOXX50E 1h] only 45 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 50 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 50, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T06:40:35.559091+00:00 mode=replay pair=ALL tf=1h reason=manual =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for ^STOXX50E — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "^STOXX50E", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T07:07:37.066824+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  103 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → loss
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → loss
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → win
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → win
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → loss
+  FIRED  EURUSD=X 1h tweezer score=-76.5 SHORT entry=1.1489 sl=1.14936 tp=1.1482 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14758 sl=1.14897 tp=1.14549 → pending
+  FIRED  EURUSD=X 1h doji score=63.9 LONG entry=1.14758 sl=1.14649 tp=1.14921 → loss
+  FIRED  EURUSD=X 1h marubozu score=-89.9 SHORT entry=1.14705 sl=1.14814 tp=1.14542 → pending
+  FIRED  EURUSD=X 1h shooting_star score=-59.2 SHORT entry=1.14718 sl=1.14897 tp=1.14451 → pending
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14692 sl=1.14801 tp=1.14529 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-80.9 SHORT entry=1.14679 sl=1.14788 tp=1.14516 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.14659 tp=1.1484 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14679 sl=1.14751 tp=1.14571 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.1466 tp=1.14839 → loss
+  FIRED  EURUSD=X 1h three_soldiers_crows score=47.8 LONG entry=1.14811 sl=1.1473 tp=1.14931 → loss
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14745 sl=1.14826 tp=1.14622 → pending
+  Done. 20 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  103 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → win
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → loss
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33917 sl=1.33993 tp=1.33803 → win
+  FIRED  GBPUSD=X 1h star score=-71.8 SHORT entry=1.33808 sl=1.33994 tp=1.33529 → pending
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.3374 sl=1.33874 tp=1.33539 → loss
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.33699 sl=1.33836 tp=1.33494 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33681 sl=1.33815 tp=1.3348 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33684 sl=1.33805 tp=1.33504 → loss
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33654 sl=1.33772 tp=1.33477 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33749 sl=1.33687 tp=1.33841 → win
+  FIRED  GBPUSD=X 1h tweezer score=-94.2 SHORT entry=1.33819 sl=1.33928 tp=1.33655 → pending
+  Done. 19 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  36 candles loaded. Running engine...
+[^STOXX50E 1h] only 36 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 39 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 39, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T08:08:55.331606+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] EURUSD=X @ 1h still rate limited after retries — using cached data (62m old) instead of failing this cycle.
+  103 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → loss
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → loss
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → win
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → win
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → loss
+  FIRED  EURUSD=X 1h tweezer score=-76.5 SHORT entry=1.1489 sl=1.14936 tp=1.1482 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14758 sl=1.14897 tp=1.14549 → pending
+  FIRED  EURUSD=X 1h doji score=63.9 LONG entry=1.14758 sl=1.14649 tp=1.14921 → loss
+  FIRED  EURUSD=X 1h marubozu score=-89.9 SHORT entry=1.14705 sl=1.14814 tp=1.14542 → pending
+  FIRED  EURUSD=X 1h shooting_star score=-59.2 SHORT entry=1.14718 sl=1.14897 tp=1.14451 → pending
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14692 sl=1.14801 tp=1.14529 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-80.9 SHORT entry=1.14679 sl=1.14788 tp=1.14516 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.14659 tp=1.1484 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14679 sl=1.14751 tp=1.14571 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.1466 tp=1.14839 → loss
+  FIRED  EURUSD=X 1h three_soldiers_crows score=47.8 LONG entry=1.14811 sl=1.1473 tp=1.14931 → loss
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14745 sl=1.14826 tp=1.14622 → pending
+  Done. 20 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] GBPUSD=X @ 1h still rate limited after retries — using cached data (62m old) instead of failing this cycle.
+  103 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → win
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → loss
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33917 sl=1.33993 tp=1.33803 → win
+  FIRED  GBPUSD=X 1h star score=-71.8 SHORT entry=1.33808 sl=1.33994 tp=1.33529 → pending
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.3374 sl=1.33874 tp=1.33539 → loss
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.33699 sl=1.33836 tp=1.33494 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33681 sl=1.33815 tp=1.3348 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33684 sl=1.33805 tp=1.33504 → loss
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33654 sl=1.33772 tp=1.33477 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33749 sl=1.33687 tp=1.33841 → win
+  FIRED  GBPUSD=X 1h tweezer score=-94.2 SHORT entry=1.33819 sl=1.33928 tp=1.33655 → pending
+  Done. 19 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] ^STOXX50E @ 1h still rate limited after retries — using cached data (62m old) instead of failing this cycle.
+  36 candles loaded. Running engine...
+[^STOXX50E 1h] only 36 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 39 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 39, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T09:10:49.166559+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] EURUSD=X @ 1h still rate limited after retries — using cached data (123m old) instead of failing this cycle.
+  103 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → loss
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → loss
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → win
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → win
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → loss
+  FIRED  EURUSD=X 1h tweezer score=-76.5 SHORT entry=1.1489 sl=1.14936 tp=1.1482 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14758 sl=1.14897 tp=1.14549 → pending
+  FIRED  EURUSD=X 1h doji score=63.9 LONG entry=1.14758 sl=1.14649 tp=1.14921 → loss
+  FIRED  EURUSD=X 1h marubozu score=-89.9 SHORT entry=1.14705 sl=1.14814 tp=1.14542 → pending
+  FIRED  EURUSD=X 1h shooting_star score=-59.2 SHORT entry=1.14718 sl=1.14897 tp=1.14451 → pending
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14692 sl=1.14801 tp=1.14529 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-80.9 SHORT entry=1.14679 sl=1.14788 tp=1.14516 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.14659 tp=1.1484 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14679 sl=1.14751 tp=1.14571 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.1466 tp=1.14839 → loss
+  FIRED  EURUSD=X 1h three_soldiers_crows score=47.8 LONG entry=1.14811 sl=1.1473 tp=1.14931 → loss
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14745 sl=1.14826 tp=1.14622 → pending
+  Done. 20 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] GBPUSD=X @ 1h still rate limited after retries — using cached data (124m old) instead of failing this cycle.
+  103 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → win
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → loss
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33917 sl=1.33993 tp=1.33803 → win
+  FIRED  GBPUSD=X 1h star score=-71.8 SHORT entry=1.33808 sl=1.33994 tp=1.33529 → pending
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.3374 sl=1.33874 tp=1.33539 → loss
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.33699 sl=1.33836 tp=1.33494 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33681 sl=1.33815 tp=1.3348 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33684 sl=1.33805 tp=1.33504 → loss
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33654 sl=1.33772 tp=1.33477 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33749 sl=1.33687 tp=1.33841 → win
+  FIRED  GBPUSD=X 1h tweezer score=-94.2 SHORT entry=1.33819 sl=1.33928 tp=1.33655 → pending
+  Done. 19 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] ^STOXX50E @ 1h still rate limited after retries — using cached data (124m old) instead of failing this cycle.
+  36 candles loaded. Running engine...
+[^STOXX50E 1h] only 36 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 39 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 39, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T11:03:04.701087+00:00 mode=replay pair=ALL tf=1h reason=manual =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for ^STOXX50E — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "^STOXX50E", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T11:06:42.116655+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for ^STOXX50E — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "^STOXX50E", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T12:08:28.255615+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for ^STOXX50E — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "^STOXX50E", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T13:10:17.286068+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for ^STOXX50E — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "^STOXX50E", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T14:11:55.987629+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for ^STOXX50E — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "^STOXX50E", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T15:13:38.668133+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for ^STOXX50E — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "^STOXX50E", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T16:15:16.749101+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for ^STOXX50E — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "^STOXX50E", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T17:17:08.763742+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for ^STOXX50E — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "^STOXX50E", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T18:14:59.293649+00:00 mode=replay pair=ALL tf=1h reason=manual =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  114 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → loss
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → loss
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → win
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → win
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → loss
+  FIRED  EURUSD=X 1h tweezer score=-76.5 SHORT entry=1.1489 sl=1.14936 tp=1.1482 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14758 sl=1.14897 tp=1.14549 → win
+  FIRED  EURUSD=X 1h doji score=63.9 LONG entry=1.14758 sl=1.14649 tp=1.14921 → loss
+  FIRED  EURUSD=X 1h marubozu score=-89.9 SHORT entry=1.14705 sl=1.14814 tp=1.14542 → win
+  FIRED  EURUSD=X 1h shooting_star score=-59.2 SHORT entry=1.14718 sl=1.14897 tp=1.14451 → win
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14692 sl=1.14801 tp=1.14529 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-80.9 SHORT entry=1.14679 sl=1.14788 tp=1.14516 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.14659 tp=1.1484 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14679 sl=1.14751 tp=1.14571 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.1466 tp=1.14839 → loss
+  FIRED  EURUSD=X 1h three_soldiers_crows score=47.8 LONG entry=1.14811 sl=1.1473 tp=1.14931 → loss
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14745 sl=1.14816 tp=1.14638 → win
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14653 sl=1.14742 tp=1.14519 → win
+  Done. 21 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  114 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → win
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → loss
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33917 sl=1.33993 tp=1.33803 → win
+  FIRED  GBPUSD=X 1h star score=-71.8 SHORT entry=1.33808 sl=1.33994 tp=1.33529 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.3374 sl=1.33874 tp=1.33539 → loss
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.33699 sl=1.33836 tp=1.33494 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33681 sl=1.33815 tp=1.3348 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33684 sl=1.33805 tp=1.33504 → loss
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33654 sl=1.33772 tp=1.33477 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33749 sl=1.33687 tp=1.33841 → win
+  FIRED  GBPUSD=X 1h tweezer score=-94.2 SHORT entry=1.33819 sl=1.33928 tp=1.33655 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.33577 sl=1.33706 tp=1.33384 → win
+  FIRED  GBPUSD=X 1h tweezer score=-87.5 SHORT entry=1.33651 sl=1.33888 tp=1.33295 → win
+  FIRED  GBPUSD=X 1h star score=-52.2 SHORT entry=1.33611 sl=1.33888 tp=1.33196 → pending
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-47.2 SHORT entry=1.33559 sl=1.33753 tp=1.3327 → win
+  FIRED  GBPUSD=X 1h tweezer score=47.5 LONG entry=1.33604 sl=1.33279 tp=1.34092 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-49.9 SHORT entry=1.33465 sl=1.33678 tp=1.33146 → pending
+  FIRED  GBPUSD=X 1h marubozu score=-100.0 SHORT entry=1.33241 sl=1.33465 tp=1.32904 → pending
+  Done. 26 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  45 candles loaded. Running engine...
+[^STOXX50E 1h] only 45 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 47 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 47, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T18:18:48.077581+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] EURUSD=X @ 1h still rate limited after retries — using cached data (4m old) instead of failing this cycle.
+  114 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → loss
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → loss
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → win
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → win
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → loss
+  FIRED  EURUSD=X 1h tweezer score=-76.5 SHORT entry=1.1489 sl=1.14936 tp=1.1482 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14758 sl=1.14897 tp=1.14549 → win
+  FIRED  EURUSD=X 1h doji score=63.9 LONG entry=1.14758 sl=1.14649 tp=1.14921 → loss
+  FIRED  EURUSD=X 1h marubozu score=-89.9 SHORT entry=1.14705 sl=1.14814 tp=1.14542 → win
+  FIRED  EURUSD=X 1h shooting_star score=-59.2 SHORT entry=1.14718 sl=1.14897 tp=1.14451 → win
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14692 sl=1.14801 tp=1.14529 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-80.9 SHORT entry=1.14679 sl=1.14788 tp=1.14516 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.14659 tp=1.1484 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14679 sl=1.14751 tp=1.14571 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.1466 tp=1.14839 → loss
+  FIRED  EURUSD=X 1h three_soldiers_crows score=47.8 LONG entry=1.14811 sl=1.1473 tp=1.14931 → loss
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14745 sl=1.14816 tp=1.14638 → win
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14653 sl=1.14742 tp=1.14519 → win
+  Done. 21 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] GBPUSD=X @ 1h still rate limited after retries — using cached data (4m old) instead of failing this cycle.
+  114 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → win
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → loss
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33917 sl=1.33993 tp=1.33803 → win
+  FIRED  GBPUSD=X 1h star score=-71.8 SHORT entry=1.33808 sl=1.33994 tp=1.33529 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.3374 sl=1.33874 tp=1.33539 → loss
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.33699 sl=1.33836 tp=1.33494 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33681 sl=1.33815 tp=1.3348 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33684 sl=1.33805 tp=1.33504 → loss
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33654 sl=1.33772 tp=1.33477 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33749 sl=1.33687 tp=1.33841 → win
+  FIRED  GBPUSD=X 1h tweezer score=-94.2 SHORT entry=1.33819 sl=1.33928 tp=1.33655 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.33577 sl=1.33706 tp=1.33384 → win
+  FIRED  GBPUSD=X 1h tweezer score=-87.5 SHORT entry=1.33651 sl=1.33888 tp=1.33295 → win
+  FIRED  GBPUSD=X 1h star score=-52.2 SHORT entry=1.33611 sl=1.33888 tp=1.33196 → pending
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-47.2 SHORT entry=1.33559 sl=1.33753 tp=1.3327 → win
+  FIRED  GBPUSD=X 1h tweezer score=47.5 LONG entry=1.33604 sl=1.33279 tp=1.34092 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-49.9 SHORT entry=1.33465 sl=1.33678 tp=1.33146 → pending
+  FIRED  GBPUSD=X 1h marubozu score=-100.0 SHORT entry=1.33241 sl=1.33465 tp=1.32904 → pending
+  Done. 26 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] ^STOXX50E @ 1h still rate limited after retries — using cached data (5m old) instead of failing this cycle.
+  45 candles loaded. Running engine...
+[^STOXX50E 1h] only 45 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 47 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 47, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-22T19:20:40.893768+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] EURUSD=X @ 1h still rate limited after retries — using cached data (66m old) instead of failing this cycle.
+  114 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14626 sl=1.14762 tp=1.14423 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14903 sl=1.15044 tp=1.14691 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14797 sl=1.14897 tp=1.14648 → loss
+  FIRED  EURUSD=X 1h marubozu score=-47.3 SHORT entry=1.14784 sl=1.14896 tp=1.14616 → loss
+  FIRED  EURUSD=X 1h doji score=54.6 LONG entry=1.14784 sl=1.14694 tp=1.1492 → win
+  FIRED  EURUSD=X 1h tweezer score=46.8 LONG entry=1.14784 sl=1.14695 tp=1.14918 → win
+  FIRED  EURUSD=X 1h tweezer score=-74.5 SHORT entry=1.14837 sl=1.14895 tp=1.14749 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-97.9 SHORT entry=1.14837 sl=1.14895 tp=1.1475 → loss
+  FIRED  EURUSD=X 1h tweezer score=-76.5 SHORT entry=1.1489 sl=1.14936 tp=1.1482 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14758 sl=1.14897 tp=1.14549 → win
+  FIRED  EURUSD=X 1h doji score=63.9 LONG entry=1.14758 sl=1.14649 tp=1.14921 → loss
+  FIRED  EURUSD=X 1h marubozu score=-89.9 SHORT entry=1.14705 sl=1.14814 tp=1.14542 → win
+  FIRED  EURUSD=X 1h shooting_star score=-59.2 SHORT entry=1.14718 sl=1.14897 tp=1.14451 → win
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14692 sl=1.14801 tp=1.14529 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-80.9 SHORT entry=1.14679 sl=1.14788 tp=1.14516 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.14659 tp=1.1484 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14679 sl=1.14751 tp=1.14571 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.1466 tp=1.14839 → loss
+  FIRED  EURUSD=X 1h three_soldiers_crows score=47.8 LONG entry=1.14811 sl=1.1473 tp=1.14931 → loss
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14745 sl=1.14816 tp=1.14638 → win
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14653 sl=1.14742 tp=1.14519 → win
+  Done. 21 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] GBPUSD=X @ 1h still rate limited after retries — using cached data (66m old) instead of failing this cycle.
+  114 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-89.4 SHORT entry=1.33422 sl=1.33642 tp=1.33093 → loss
+  FIRED  GBPUSD=X 1h engulfing score=47.9 LONG entry=1.33609 sl=1.33353 tp=1.33994 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=53.2 LONG entry=1.33829 sl=1.33623 tp=1.34139 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-80.2 SHORT entry=1.33946 sl=1.34138 tp=1.33658 → win
+  FIRED  GBPUSD=X 1h shooting_star score=-56.0 SHORT entry=1.33897 sl=1.33996 tp=1.3375 → win
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33833 sl=1.33995 tp=1.3359 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-100.0 SHORT entry=1.33824 sl=1.33994 tp=1.33568 → loss
+  FIRED  GBPUSD=X 1h shooting_star score=-85.9 SHORT entry=1.33831 sl=1.33926 tp=1.33689 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33833 sl=1.33992 tp=1.33595 → loss
+  FIRED  GBPUSD=X 1h star score=-100.0 SHORT entry=1.33806 sl=1.339 tp=1.33665 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33917 sl=1.33993 tp=1.33803 → win
+  FIRED  GBPUSD=X 1h star score=-71.8 SHORT entry=1.33808 sl=1.33994 tp=1.33529 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.3374 sl=1.33874 tp=1.33539 → loss
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.33699 sl=1.33836 tp=1.33494 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33681 sl=1.33815 tp=1.3348 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33684 sl=1.33805 tp=1.33504 → loss
+  FIRED  GBPUSD=X 1h engulfing score=-100.0 SHORT entry=1.33654 sl=1.33772 tp=1.33477 → loss
+  FIRED  GBPUSD=X 1h tweezer score=41.4 LONG entry=1.33749 sl=1.33687 tp=1.33841 → win
+  FIRED  GBPUSD=X 1h tweezer score=-94.2 SHORT entry=1.33819 sl=1.33928 tp=1.33655 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.33577 sl=1.33706 tp=1.33384 → win
+  FIRED  GBPUSD=X 1h tweezer score=-87.5 SHORT entry=1.33651 sl=1.33888 tp=1.33295 → win
+  FIRED  GBPUSD=X 1h star score=-52.2 SHORT entry=1.33611 sl=1.33888 tp=1.33196 → pending
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-47.2 SHORT entry=1.33559 sl=1.33753 tp=1.3327 → win
+  FIRED  GBPUSD=X 1h tweezer score=47.5 LONG entry=1.33604 sl=1.33279 tp=1.34092 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-49.9 SHORT entry=1.33465 sl=1.33678 tp=1.33146 → pending
+  FIRED  GBPUSD=X 1h marubozu score=-100.0 SHORT entry=1.33241 sl=1.33465 tp=1.32904 → pending
+  Done. 26 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  [candles] ^STOXX50E @ 1h still rate limited after retries — using cached data (66m old) instead of failing this cycle.
+  45 candles loaded. Running engine...
+[^STOXX50E 1h] only 45 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 47 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 47, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-23T06:50:32.474743+00:00 mode=replay pair=ALL tf=1h reason=manual =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  [candles] EURUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for EURUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  [candles] GBPUSD=X @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for GBPUSD=X — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  [candles] ^STOXX50E @ 1h rate limited (attempt 1/2), retrying in 8.0s...
+  Live fetch failed (YFRateLimitError) for ^STOXX50E — refusing synthetic fallback because alert=True. No signals will be produced this cycle. Check network/yfinance access (see DOCKER.md: yfinance rate limits).
+
+Summary: 0 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 0, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": [{"pair": "EURUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "GBPUSD=X", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}, {"pair": "^STOXX50E", "timeframe": "1h", "reason": "YFRateLimitError: Too Many Requests. Rate limited. Try after a while."}]}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-23T07:09:39.614465+00:00 mode=replay pair=ALL tf=1h reason=auto =====
+[replay] EURUSD=X 1h period=5d
+Replaying EURUSD=X @ 1h (period=5d)...
+  103 candles loaded. Running engine...
+  FIRED  EURUSD=X 1h tweezer score=-59.9 SHORT entry=1.1489 sl=1.14936 tp=1.1482 → win
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14758 sl=1.14897 tp=1.14549 → win
+  FIRED  EURUSD=X 1h doji score=100.0 LONG entry=1.14758 sl=1.14649 tp=1.14921 → loss
+  FIRED  EURUSD=X 1h marubozu score=-77.4 SHORT entry=1.14705 sl=1.14814 tp=1.14542 → win
+  FIRED  EURUSD=X 1h tweezer score=100.0 LONG entry=1.14718 sl=1.14611 tp=1.14879 → loss
+  FIRED  EURUSD=X 1h engulfing score=-100.0 SHORT entry=1.14692 sl=1.14801 tp=1.14529 → loss
+  FIRED  EURUSD=X 1h shooting_star score=-52.6 SHORT entry=1.14679 sl=1.14788 tp=1.14516 → loss
+  FIRED  EURUSD=X 1h doji score=43.1 LONG entry=1.14679 sl=1.14584 tp=1.14821 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.14659 tp=1.1484 → loss
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14679 sl=1.14751 tp=1.14571 → loss
+  FIRED  EURUSD=X 1h tweezer score=53.2 LONG entry=1.14732 sl=1.1466 tp=1.14839 → loss
+  FIRED  EURUSD=X 1h three_soldiers_crows score=47.8 LONG entry=1.14811 sl=1.1473 tp=1.14931 → loss
+  FIRED  EURUSD=X 1h marubozu score=-100.0 SHORT entry=1.14745 sl=1.14816 tp=1.14638 → win
+  FIRED  EURUSD=X 1h tweezer score=-100.0 SHORT entry=1.14653 sl=1.14742 tp=1.14519 → win
+  FIRED  EURUSD=X 1h tweezer score=-91.6 SHORT entry=1.14508 sl=1.14586 tp=1.14392 → win
+  FIRED  EURUSD=X 1h tweezer score=-92.6 SHORT entry=1.14495 sl=1.14583 tp=1.14363 → win
+  FIRED  EURUSD=X 1h marubozu score=-90.5 SHORT entry=1.14416 sl=1.14582 tp=1.14169 → pending
+  FIRED  EURUSD=X 1h three_soldiers_crows score=-72.3 SHORT entry=1.14312 sl=1.14423 tp=1.14146 → pending
+  Done. 18 signals fired (threshold=40.0).
+[replay] GBPUSD=X 1h period=5d
+Replaying GBPUSD=X @ 1h (period=5d)...
+  103 candles loaded. Running engine...
+  FIRED  GBPUSD=X 1h tweezer score=-87.0 SHORT entry=1.33917 sl=1.33993 tp=1.33803 → win
+  FIRED  GBPUSD=X 1h star score=-56.2 SHORT entry=1.33808 sl=1.33994 tp=1.33529 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.3374 sl=1.33874 tp=1.33539 → loss
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.33699 sl=1.33836 tp=1.33494 → loss
+  FIRED  GBPUSD=X 1h tweezer score=77.4 LONG entry=1.33706 sl=1.3357 tp=1.33909 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33681 sl=1.33815 tp=1.3348 → loss
+  FIRED  GBPUSD=X 1h doji score=45.1 LONG entry=1.33688 sl=1.33551 tp=1.33894 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33684 sl=1.33805 tp=1.33504 → loss
+  FIRED  GBPUSD=X 1h tweezer score=60.2 LONG entry=1.33742 sl=1.33687 tp=1.33824 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33654 sl=1.33772 tp=1.33477 → loss
+  FIRED  GBPUSD=X 1h tweezer score=100.0 LONG entry=1.33749 sl=1.33687 tp=1.33841 → win
+  FIRED  GBPUSD=X 1h tweezer score=-94.2 SHORT entry=1.33819 sl=1.33928 tp=1.33655 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-100.0 SHORT entry=1.33577 sl=1.33706 tp=1.33384 → win
+  FIRED  GBPUSD=X 1h tweezer score=-87.5 SHORT entry=1.33651 sl=1.33888 tp=1.33295 → win
+  FIRED  GBPUSD=X 1h star score=-52.2 SHORT entry=1.33611 sl=1.33888 tp=1.33196 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-47.2 SHORT entry=1.33559 sl=1.33753 tp=1.3327 → win
+  FIRED  GBPUSD=X 1h tweezer score=47.5 LONG entry=1.33604 sl=1.33279 tp=1.34092 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-49.9 SHORT entry=1.33465 sl=1.33678 tp=1.33146 → win
+  FIRED  GBPUSD=X 1h marubozu score=-100.0 SHORT entry=1.33241 sl=1.33465 tp=1.32904 → loss
+  FIRED  GBPUSD=X 1h tweezer score=-45.2 SHORT entry=1.33433 sl=1.33658 tp=1.33096 → win
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-48.0 SHORT entry=1.33246 sl=1.334 tp=1.33016 → pending
+  FIRED  GBPUSD=X 1h three_soldiers_crows score=-75.2 SHORT entry=1.33163 sl=1.33313 tp=1.32937 → pending
+  FIRED  GBPUSD=X 1h tweezer score=-100.0 SHORT entry=1.33133 sl=1.33251 tp=1.32955 → pending
+  Done. 23 signals fired (threshold=40.0).
+[replay] ^STOXX50E 1h period=5d
+Replaying ^STOXX50E @ 1h (period=5d)...
+  36 candles loaded. Running engine...
+[^STOXX50E 1h] only 36 bars — need >= 60, skip
+  Done. 0 signals fired (threshold=40.0).
+
+Summary: 41 fired signals logged to delivery/logs/signals.jsonl
+
+RUNNER_SUMMARY:{"fired": 41, "pairs_attempted": ["EURUSD=X", "GBPUSD=X", "^STOXX50E"], "fetch_errors": []}
+[ml] auto-retrain skipped: Only 0 new labels since last fit (need ≥2)
+
+===== SCAN DONE rc=0 =====
+
+===== SCAN 2026-09-23T08:10:42.248770+00:00 mode=replay pair=ALL tf=1h reason=auto =====

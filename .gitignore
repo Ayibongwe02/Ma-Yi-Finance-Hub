@@ -1,0 +1,19 @@
+# Secrets — never commit real values
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Node / frontend build output
+node_modules/
+backend/frontend/dist/
+
+# Runtime-generated data (volume-mounted at runtime; see docker-compose.yml)
+backend/delivery/logs/*
+backend/execution/logs/*
+backend/data/store/*
+backend/backtest/reports/*
