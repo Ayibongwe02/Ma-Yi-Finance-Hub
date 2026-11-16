@@ -1,4 +1,4 @@
-# Ma-yi Sentinel
+# Ma-yi Finance HUb
 
 Live Command desk (React) + Stage-4 Python engine (yfinance, patterns, ML / anomaly, orders).
 
